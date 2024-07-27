@@ -31,17 +31,51 @@
 
 // const cart = { "phone": 2500 };
 
-function cost (cart){
+// function cost (cart){
 
-    let total = 0;
+//     let total = 0;
 
-    // Convert the cart object into an array
-    const cartArray = Object.entries(cart);
+//     // Convert the cart object into an array
+//     const cartArray = Object.entries(cart);
 
-    for (let i=0; i<cartArray.length; i++){
-        total += cartArray[i][1];
+//     for (let i=0; i<cartArray.length; i++){
+//         total += cartArray[i][1];
+//     }
+//     console.log("The Total price of your cart is: $" + total.toFixed(2));
+// }
+
+// cost ({"phone": 2500})
+
+function totalMoney(amount, deposit){
+    
+    if (deposit> 0){
+        amount += deposit;
+        console.log(`You deposited $${deposit}.`);
+        console.log(`You now have $${amount}`);
+    return amount;
     }
-    console.log("The Total price of your cart is: $" + total.toFixed(2));
+}
+totalMoney(1098787893, 198723429374657236478);
+
+
+function withdraw(amount, withdraw){
+
+    if (withdraw<=amount){
+        amount -= withdraw;
+        console.log(`You withdrew $${withdraw}.`);
+        console.log(`You now have $${amount}`);
+    return amount;
+    } else {
+        console.log("Insufficient Funds")
+    }
+}
+withdraw(1098787893, 198723429374657236478);
+
+
+function currentBalance(account){
+    account=account;
+    console.log(`Your current balance is $${account}`)
+    return account
 }
 
-cost ({"phone": 2500})
+currentBalance(9876545678987654)
